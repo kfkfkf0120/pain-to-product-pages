@@ -1,0 +1,14 @@
+:root { --bg: #ffffff; --text: #1f1f1d; --muted: #5f5e5a; --line: #e2e0d8; --accent: #0f6e56; }
+@media (prefers-color-scheme: dark) { :root { --bg: #1b1b1a; --text: #f1efe8; --muted: #b4b2a9; --line: #3a3a37; --accent: #5dcaa5; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, "Hiragino Sans", "Noto Sans JP", sans-serif; line-height: 1.8; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+h1 { font-size: 24px; font-weight: 600; margin: 0 0 8px; }
+h2 { font-size: 18px; font-weight: 600; margin: 32px 0 8px; border-top: 1px solid var(--line); padding-top: 24px; }
+p, li { font-size: 15px; }
+.muted { color: var(--muted); font-size: 13px; }
+a { color: var(--accent); }
+nav { display: flex; flex-wrap: wrap; gap: 16px; margin: 0 0 24px; font-size: 14px; }
+code, .box { font-family: ui-monospace, Consolas, monospace; background: color-mix(in srgb, var(--line) 50%, transparent); padding: 2px 6px; border-radius: 4px; word-break: break-all; }
+.box { display: block; padding: 12px; margin: 12px 0; }
+button { font: inherit; padding: 8px 16px; border: 1px solid var(--line); background: transparent; color: var(--text); border-radius: 6px; cursor: pointer; }

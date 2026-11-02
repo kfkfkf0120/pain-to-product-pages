@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Threads login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Threads ログインの戻り先</h1>
+<p>このページのアドレス（URL）をコピーして、pain-to-product の「API 設定」→「Threads API」→「方法2」に貼り付けてください。このページはアドレスをどこにも送信しません。</p>
+<p>Copy this page's address (URL) and paste it into pain-to-product under API settings &gt; Threads API &gt; Method 2. This page does not send the address anywhere.</p>
+<span class="box" id="url"></span>
+<button id="copy" type="button">URL をコピー / Copy URL</button>
+<p class="muted" id="status"></p>
+</main>
+<script>
+const url = location.href;
+document.getElementById("url").textContent = url.includes("code=") || url.includes("error") ? url : "（まだログインしていません / Not logged in yet）";
+document.getElementById("copy").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(url); document.getElementById("status").textContent = "コピーしました / Copied"; }
+  catch { document.getElementById("status").textContent = "コピーできませんでした。アドレス欄から手でコピーしてください / Copy failed. Copy it from the address bar."; }
+});
+</script>
+</body>
+</html>
